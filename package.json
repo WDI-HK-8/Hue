@@ -1,0 +1,35 @@
+{
+  "name": "hue",
+  "version": "1.0.0",
+  "description": "App that builds color profiles and definition",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/WDI-HK-8/Hue.git"
+  },
+  "keywords": [
+    "color",
+    "color profiling",
+    "color tool",
+    "color definition",
+    "color communication"
+  ],
+  "author": "jonycfu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WDI-HK-8/Hue/issues"
+  },
+  "homepage": "https://github.com/WDI-HK-8/Hue#readme",
+  "dependencies": {
+    "bcrypt": "^0.8.4",
+    "handlebars": "^3.0.3",
+    "hapi": "^8.8.1",
+    "hapi-mongodb": "^3.0.0",
+    "joi": "^6.6.1",
+    "path": "^0.11.14",
+    "yar": "^3.0.3"
+  }
+}
