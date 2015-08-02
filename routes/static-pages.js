@@ -1,5 +1,5 @@
 //static resources/assets for the site
-
+//link registry point to index.js, where it is 'plugged in'
 exports.register = function(server, options, next){
   server.route([
     {

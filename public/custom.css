@@ -70,8 +70,9 @@ div.navbar-header span{
 }
 
 .dropdown-toggle:focus, .dropdown-toggle:hover{
-  color: darkgrey;
+  color: #232324;
   text-decoration: none;
+  background-color: rgba(5,147,255,0.5);
 }
 
 .dropdown-menu{

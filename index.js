@@ -29,6 +29,7 @@ server.views({
 
 // ---------ROUTES & PLUGINS---------
 var plugins = [
+  {register: require('./routes/users.js')},
   {register: require('./routes/static-pages.js')},
   { //add hapi-mongodb plugin
     register: require('hapi-mongodb'),
