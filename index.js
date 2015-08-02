@@ -27,9 +27,9 @@ server.views({
   path: Path.join(__dirname, 'templates')
 });
 
-
 // ---------ROUTES & PLUGINS---------
 var plugins = [
+  {register: require('./routes/static-pages.js')},
   { //add hapi-mongodb plugin
     register: require('hapi-mongodb'),
     options: {
@@ -51,13 +51,13 @@ var plugins = [
     }
   }
 ];
-
+// -----------SERVER RUN------------
 //register/load server with plugins and callback
 server.register(plugins, function(err){
   if(err){throw err;} //display plugin error
   
   //if no plugin errors, start server
   server.start(function(){
-    console.log('info', 'Server running at: ' + server.info.uri);
+    console.log('Server running at: ' + server.info.uri);
   });
 });

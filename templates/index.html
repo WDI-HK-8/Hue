@@ -2,7 +2,9 @@
 <html>
 <head>
   <title>Hue: Build Your Color Definitions</title>
-  
+  <link rel="icon" 
+        type="image/png" 
+        href="../public/assets/nyan_cat_favicon.png">
   <!-- INCLUDED LIBRARIES -->
   <script src="../bower_components/jquery/dist/jquery.min.js"></script>
   <script src="../bower_components/jquery-color/jquery.color.js"></script>
@@ -14,6 +16,81 @@
   <link rel="stylesheet" type="text/css" href="../public/custom.css">
 </head>
 <body>
+  <!-- bootstrap navbar -->
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- bootstrap dropdown -->
+      <div class="navbar-header">
+        <a class="navbar-brand" href="">  <h1>Hue.list</h1>
+        </a>
 
+        <span id="logo_subhead"><small>Build Your Color Definitions</small></span>
+      </div>
+      <div class="dropdown">
+        <a href="#" class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sign in<span class="caret"></span></a>
+        <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
+          <form>
+            <li>
+              <label>Email</label>
+              <input type="text" id="signinUserName" placeholder="Email"></input>
+            </li>
+            <li>
+              <label>Password</label>
+              <input type="text" id="signinPassword" placeholder="Password"></input>
+            </li>
+            <li>
+              <label>Remember Me</label>
+              <input id="save_cookie_checkbox" type="checkbox"></input>
+            </li>
+           
+            <li role="separator" class="divider"></li>
+            <li><button id="login_btn" type="submit" class="btn btn-default btn-lg btn-success">Log in</button></li>
+          </form>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <header>
+      <h1>Redefine what colors <span id="signup_span">say</span></h1>
+      <span id="gradient_line"></span>
+    </header>
+    <article id="signup_form">
+      <p>Let's get you an account first; otherwise, how are you gonna keep track of all those colors?</p><p>...I mean, there are just over 16 million web colors. Just sayin'.</p>
+      <form class="form-horizontal">
+        <div class="form-group">
+          <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+          <div class="col-sm-10">
+            <input class="input-lg" type="email" class="form-control" id="inputEmail3" placeholder="Email">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+          <div class="col-sm-10">
+            <input class="input-lg" type="password" class="form-control" id="inputPassword3" placeholder="Password">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputPassword3" class="col-sm-2 control-label">Re-type Password</label>
+          <div class="col-sm-10">
+            <input class="input-lg" type="password" class="form-control" id="inputPassword3" placeholder="Password">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-1 col-sm-10">
+            <div class="checkbox">
+              <input type="checkbox"> 
+              <label>Remember me</label>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-1 col-sm-10">
+            <button type="submit" class="btn btn-default btn-lg btn-success">Become a Huelist</button>
+          </div>
+        </div>
+      </form>
+    </article>
+  </div>  
 </body>
 </html>
