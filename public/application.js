@@ -38,11 +38,33 @@ Hue.prototype.signin_user = function() {
         password: $('#signin_password').val()
       } 
     },
-    success:function(response){ //change page to color library
+    success:function(response){ 
+      //change page to projects page on successful log in
+
+      //create table for project listings
+
+      //get sends a 'get' request to fetch project listing
       console.log(response);
+      if(response.authenticated === true){
+        $('.container').html('YOU ARE SIGNED IN.');
+      }
     },
     error:function(error){
       console.log(error);
+    }
+  });
+};
+
+Hue.prototype.auth = function(){
+  $.ajax({
+    url: '/authenticated',
+    type: 'GET',
+    dataType: 'JSON',
+    success: function(response){
+      console.log(response); //auth result
+    },
+    error: function(error){
+      console.log(error); //auth error
     }
   });
 };

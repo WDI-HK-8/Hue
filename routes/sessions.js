@@ -1,8 +1,9 @@
 var Bcrypt = require('bcrypt');
-// var Auth = require('./auth'); // => import auth module
+var Auth = require('./auth'); // => import auth plugin/module
 
 exports.register = function(server, options, next){
   server.route([
+    //LOG IN - SETS NEW SESSION OBJECT
     {
       method: 'POST',
       path: '/sessions',
@@ -26,7 +27,10 @@ exports.register = function(server, options, next){
               return (((1+Math.random())*0x10000)|0).toString(16).substring(1); 
             };
 
-            var session = {user_id: writeResult._id, session_id: randomKeyGenerator()};
+            var session = { //THIS IS COOKIE
+              user_id: writeResult._id, 
+              session_id: randomKeyGenerator()
+            };
 
             db.collection('sessions').insert(session, function(err, writeResult){
               if(err){return reply(err)};
@@ -36,6 +40,15 @@ exports.register = function(server, options, next){
             }); 
           });
         });
+      }
+    },
+    //LOGGED-IN AUTH CHECK. USE THIS ON EACH USER TASK (all user actions require a logged in status, as it saves the 'state' of each task)
+    {
+      method:'GET',
+      path:'/authenticated',
+      handler:function(request, reply){
+        var callback = function(result){ reply(result); } 
+        Auth.authenticated(request, callback);
       }
     }
   ]);
