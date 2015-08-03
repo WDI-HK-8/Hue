@@ -95,10 +95,12 @@ div.navbar-header span{
 }
 
 /*Main*/
+
+/*Signup Form*/
 .container{
   margin: 80px auto;
   background-color: #232324;
-  min-height: 45vh;
+  min-height: 85vh;
   width:50vw;
   box-shadow: 5px 10px 15px black;
   box-sizing:border-box;
@@ -150,6 +152,11 @@ form.form-horizontal input{
 
 .checkbox input[type=checkbox]{
   width:inherit;
+}
+
+/*Project List Table*/
+.table-striped>tbody>tr:nth-of-type(odd){
+  background-color: rgba(222,222,227,0.15) ;
 }
 
 /*Modal*/

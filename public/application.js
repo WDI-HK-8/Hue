@@ -40,14 +40,14 @@ Hue.prototype.signin_user = function() {
     },
     success:function(response){ 
       //change page to projects page on successful log in
-
-      //create table for project listings
-
-      //get sends a 'get' request to fetch project listing
+      
       console.log(response);
       if(response.authenticated === true){
-        $('.container').html('YOU ARE SIGNED IN.');
+        window.location.href = './projects';
       }
+      //...NEEDS AJAX HERE TO GET PROJECT LISTINGS.
+
+      //Sends a 'get' request to fetch project listing
     },
     error:function(error){
       console.log(error);

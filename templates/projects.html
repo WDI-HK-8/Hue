@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hue: Build Your Color Definitions</title>
+  <link rel="icon" 
+        type="image/png" 
+        href="../public/assets/nyan_cat_favicon.png">
+  <!-- INCLUDED LIBRARIES -->
+  <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="../bower_components/jquery-color/jquery.color.js"></script>
+  <link rel="stylesheet" type="text/css" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <script type="text/javascript" src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+  <!-- LOCAL RESOURCES: FROM PUBLIC -->
+  <script type="text/javascript" src="../public/application.js"></script>
+  <link rel="stylesheet" type="text/css" href="../public/custom.css">
+</head>
+<body>
+  <!-- bootstrap navbar -->
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="">  
+          <h1>Hue.list</h1>
+        </a>
+        <span id="logo_subhead">
+          <small>Build Your Color Definitions</small>
+        </span>
+      </div>
+      <div class="dropdown">
+        <a href="#" class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sign out <span class="caret"></span></a>
+      </div>
+    </div>
+  </nav>
+  <!-- signup form -->
+  <div class="container">
+    <header>
+      <h1>YOU ARE SIGNED IN. DO A GET REQUEST TO APPEND COLOR LISTS BELOW</h1>
+      <span id="gradient_line"></span>
+    </header>
+    <article id="signup_form">
+      <table class="table table-striped"> 
+        <tr> 
+          <th>Project Name</th> 
+          <th>Project Color Palette</th> 
+        </tr> 
+        <tr> 
+          <td>NEW ROW</td> 
+          <td>HERE</td> 
+        </tr>
+      </table>
+    </article>
+  </div>
+  <!-- bootstrap modal item-->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Signup Success!</h4>
+        </div>
+        <div class="modal-body">
+          Now you are ready to sign in. Let's get to it!
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>  
+</body>
+</html>

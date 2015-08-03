@@ -2,7 +2,7 @@
 //link registry point to index.js, where it is 'plugged in'
 exports.register = function(server, options, next){
   server.route([
-    {
+    {//linked to view index.html
       method:'GET',
       path:'/',
       handler: function(request, reply){
@@ -26,6 +26,13 @@ exports.register = function(server, options, next){
           path: 'bower_components'
         }
       }  
+    },
+    {//linked to projects.html
+      method:'GET',
+      path:'/projects',
+      handler: function(request, reply){
+        reply.view('projects');
+      } 
     }
   ]);
 
