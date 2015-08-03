@@ -64,15 +64,14 @@ div.navbar-header span{
 }
 
 .dropdown-toggle:hover{
-  color: darkgrey;
+  color: white;
   padding-bottom: 16px;
-  border-bottom: 3px solid #27C905;
+  border-bottom: 3px solid springgreen;
 }
 
 .dropdown-toggle:focus, .dropdown-toggle:hover{
-  color: #232324;
+  color: white;
   text-decoration: none;
-  background-color: rgba(5,147,255,0.5);
 }
 
 .dropdown-menu{
@@ -102,6 +101,9 @@ div.navbar-header span{
   min-height: 45vh;
   width:50vw;
   box-shadow: 5px 10px 15px black;
+  box-sizing:border-box;
+  border-right:11px solid rgba(201,5,152,0.2);
+  border-left:11px solid rgba(201,5,152,0.2);
 }
 
 #signup_form, header h1{
@@ -113,8 +115,8 @@ div.navbar-header span{
 header h1{
   color:#FFFFFF;
   font-size: 60px;
-
 }
+
 #signup_form p,#signup_form button {
   margin: 20px auto;
   text-align: center;
@@ -148,4 +150,9 @@ form.form-horizontal input{
 
 .checkbox input[type=checkbox]{
   width:inherit;
+}
+
+/*Modal*/
+.modal-content{
+  color:black;
 }
