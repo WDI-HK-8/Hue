@@ -43,7 +43,7 @@ Hue.prototype.signin_user = function() {
       
       console.log(response);
       if(response.authenticated === true){
-        window.location.href = './projects';
+        window.location.replace('./projects');
       }
       //...NEEDS AJAX HERE TO GET PROJECT LISTINGS.
 

@@ -27,7 +27,7 @@ exports.register = function(server, options, next){
               return (((1+Math.random())*0x10000)|0).toString(16).substring(1); 
             };
 
-            var session = { //THIS IS COOKIE
+            var session = { //CREATE COOKIE
               user_id: writeResult._id, 
               session_id: randomKeyGenerator()
             };
@@ -49,6 +49,19 @@ exports.register = function(server, options, next){
       handler:function(request, reply){
         var callback = function(result){ reply(result); } 
         Auth.authenticated(request, callback);
+      }
+    },
+    {//DELETE AUTHENTICATION
+      method:'DELETE',
+      path:'/signout',
+      handler:function(request, reply){
+        var db = request.server.plugins['hapi-mongodb'].db;
+        var cookie = request.session.get('huelist_session');
+        if(!cookie){return reply({cookie:false});}
+        db.collection('sessions').remove({session_id: cookie.session_id}, function(err, writeResult){
+
+          return reply(writeResult);
+        });
       }
     }
   ]);

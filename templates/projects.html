@@ -28,18 +28,18 @@
         </span>
       </div>
       <div class="dropdown">
-        <a href="#" class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sign out <span class="caret"></span></a>
+        <a href="#" class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sign out</a>
       </div>
     </div>
   </nav>
   <!-- signup form -->
   <div class="container">
     <header>
-      <h1>YOU ARE SIGNED IN. DO A GET REQUEST TO APPEND COLOR LISTS BELOW</h1>
+      <h1>You are now signed in.<br> NOW I DEMAND A 'GET' REQUEST. <br>You "get" that?</h1>
       <span id="gradient_line"></span>
     </header>
     <article id="signup_form">
-      <table class="table table-striped"> 
+      <table class="table table-striped">
         <tr> 
           <th>Project Name</th> 
           <th>Project Color Palette</th> 
@@ -52,21 +52,40 @@
     </article>
   </div>
   <!-- bootstrap modal item-->
+  <!-- For account deletion -->
   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="myModalLabel">Signup Success!</h4>
+          <h4 class="modal-title" id="myModalLabel">Welcome back, master.</h4>
         </div>
         <div class="modal-body">
-          Now you are ready to sign in. Let's get to it!
+          You have no projects at the moment. How sad! I know you can do better.
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Okay, I get it.</button>
         </div>
       </div>
     </div>
   </div>  
 </body>
+<script type="text/javascript">
+  $(function(){
+    $('#myModal').modal('toggle');
+    $('.dropdown').click(function(){
+      $.ajax({
+        url: '/signout',
+        type: 'DELETE',
+        dataType: 'JSON',
+        success: function(respond){
+          window.location.replace('./');
+        },
+        error: function(error){
+          console.log(error);
+        }
+      });
+    });
+  });
+</script>
 </html>

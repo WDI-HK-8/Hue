@@ -9,6 +9,13 @@ exports.register = function(server, options, next){
         reply.view('index');
       }  
     },
+    {//linked to projects.html
+      method:'GET',
+      path:'/projects',
+      handler: function(request, reply){
+        reply.view('projects');
+      } 
+    },
     {//linked assets via html
       method:'GET',
       path:'/public/{path*}', 
@@ -26,13 +33,6 @@ exports.register = function(server, options, next){
           path: 'bower_components'
         }
       }  
-    },
-    {//linked to projects.html
-      method:'GET',
-      path:'/projects',
-      handler: function(request, reply){
-        reply.view('projects');
-      } 
     }
   ]);
 
