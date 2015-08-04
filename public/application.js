@@ -45,7 +45,7 @@ Hue.prototype.signin_user = function() {
       if(response.authenticated === true){
         window.location.replace('./projects');
       }
-      //...NEEDS AJAX HERE TO GET PROJECT LISTINGS.
+      //...NEEDS AJAX HERE TO GET PROJECT LISTINGS.BACKEND. FRONT END.
 
       //Sends a 'get' request to fetch project listing
     },
