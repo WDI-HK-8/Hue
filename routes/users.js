@@ -5,7 +5,7 @@ var Joi = require('joi');
 //link registry point to index.js, where it is 'plugged in'
 exports.register = function(server, options, next){
   server.route([
-    { //setup server to expect a POST Request...
+    { //CREATE USER
       method:'POST',
       path:'/users',
       handler: function(request, reply){ //returns one of each
@@ -26,13 +26,12 @@ exports.register = function(server, options, next){
                 user.confirm_password = true;
                 //add new user into collection users...
                 db.collection('users').insert(user, function(err, writeResult){
-                  reply(writeResult);
+                  reply(uniqueUser,' was registered.');
                 });
               });
           });
         });
       },
-      // validate error [1] "validate" is not allowed
       // validate:{ //Joi form validation, alias for "request"?
       //   payload:{
       //     user: {
@@ -42,7 +41,6 @@ exports.register = function(server, options, next){
       //   }
       // }
     }
-    //Next Route
   ]);
 
   next();

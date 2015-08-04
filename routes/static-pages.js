@@ -11,8 +11,9 @@ exports.register = function(server, options, next){
     },
     {//linked to projects.html
       method:'GET',
-      path:'/projects',
+      path:'/users/{user_id}/projects',
       handler: function(request, reply){
+        request.params.user_id;
         reply.view('projects');
       } 
     },

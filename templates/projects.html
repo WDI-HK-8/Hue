@@ -6,14 +6,14 @@
         type="image/png" 
         href="../public/assets/nyan_cat_favicon.png">
   <!-- INCLUDED LIBRARIES -->
-  <script src="../bower_components/jquery/dist/jquery.min.js"></script>
-  <script src="../bower_components/jquery-color/jquery.color.js"></script>
-  <link rel="stylesheet" type="text/css" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
-  <script type="text/javascript" src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="../../bower_components/jquery-color/jquery.color.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <script type="text/javascript" src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
   <!-- LOCAL RESOURCES: FROM PUBLIC -->
-  <script type="text/javascript" src="../public/application.js"></script>
-  <link rel="stylesheet" type="text/css" href="../public/custom.css">
+  <script type="text/javascript" src="../../public/application.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../public/custom.css">
 </head>
 <body>
   <!-- bootstrap navbar -->
@@ -73,14 +73,27 @@
 <!-- NEW JS FILE? -->
 <script type="text/javascript">
   $(function(){
+    //GET ALL PROJECTS ON DOM READY
+    // $.ajax({
+    //   url: '/projects',
+    //   type: 'GET',
+    //   dataType: 'JSON',
+    //   success: function(respond){
+    //     console.log(respond);
+    //   },
+    //   error: function(error){
+    //     console.log(error);
+    //   }
+    // });
     $('#myModal').modal('toggle');
+    //SIGNOUT
     $('.dropdown').click(function(){
       $.ajax({
-        url: '/signout',
+        url: '/sessions',
         type: 'DELETE',
         dataType: 'JSON',
         success: function(respond){
-          window.location.replace('./');
+          window.location.replace('/');
         },
         error: function(error){
           console.log(error);
