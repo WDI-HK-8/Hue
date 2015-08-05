@@ -16,7 +16,6 @@ html, body{
   font-family: Muli;
   color:white;
   font-size: 20px;
-  box-shadow: inset 0 0 35vh #000000;\
   overflow: auto;
 }
 
@@ -30,6 +29,7 @@ nav.navbar.navbar-default{
   height: 75px;
   border-bottom: 2px solid transparent;
   padding: 0px 50px;
+  margin-bottom: 5px;
 }
 div.container-fluid{
   width:100%;
@@ -75,44 +75,22 @@ div.navbar-header span{
   text-decoration: none;
 }
 
-.dropdown-menu{
-  top:75px;
-  margin-top: 0px;
-  padding:20px;
-  min-width: 350px;
-  background-color:#232324;
-  border:  
-}
-
-.dropdown-menu input{
-  margin-bottom: 10px;
-  width:100%;
-}
-
-#save_cookie_checkbox{
-  margin:10px 0px 0px 5px;
-  width: auto;
-
-}
 
 /*Main*/
 
-/*Signup Form*/
-.container{
-  margin:0px;
-  background-color: #232324;
-  min-height: 90vh;
-  width:35vw;
-  box-shadow: 5px 10px 15px black;
-  box-sizing:border-box;
-  border-right:11px solid rgba(201,5,152,0.2);
-  border-left:11px solid rgba(201,5,152,0.2);
+article{
+  box-shadow: inset 0 0 5vh #000000;
 }
 
-#signup_form, header h1{
-  text-align: center;
-  color:white;
-  margin: 40px;
+/*color form*/
+.container{
+  position: absolute;
+  margin:0px;
+  background-color: #232324;
+  min-height: 95vh;
+  box-shadow: 5px 10px 15px black;
+  box-sizing:border-box;
+  border-right:11px solid #232324;
 }
 
 header h1{
@@ -120,48 +98,52 @@ header h1{
   font-size: 60px;
 }
 
-#signup_form p,#signup_form button {
+header h2{
+  margin: 40px 20px;
+}
+
+#def_form p,#def_form button {
   margin: 20px auto;
   text-align: center;
-  width: auto;
   font-size: 25px;
   font-family: Philosopher;
 }
 
-#signup_form label{
+.color_row{
+  height: 120px;
+}
+
+.color_row td{
+  border: 2px solid white;
+}
+
+.form-control{
+  width:33%;
+  margin: 20px;
+  display: block;
+  clear:both;
+}
+
+#def_form label{
   padding: 0px;
   text-align: left;
 }
+#def_form{
+  height: 45vh;
+}
 
-#signup_span{
+#colorpicker_form{
+  height: 50vh;
+}
+
+
+#def_span{
   color:#FC2F1F;
 }
 
-form.form-horizontal{
-  width: 80%;
-  margin: 60px auto;
-}
-form.form-horizontal input{
-  margin-bottom: 20px;
-  margin-left:25px;
-  width: 95%;
-}
-
-#signup_form .col-sm-10{
-  padding: 0px;
-}
-
-.checkbox input[type=checkbox]{
-  width:inherit;
-}
-
-/*Project List Table*/
-.table-striped>tbody>tr:nth-of-type(odd){
-  background-color: rgba(222,222,227,0.15) ;
-}
-
-th{
-  text-align: center;
+/*Colorpicker*/
+.color{ 
+  margin: 20px;
 }
 
 /*Modal*/

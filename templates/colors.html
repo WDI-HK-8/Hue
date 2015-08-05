@@ -10,6 +10,7 @@
     <script src="../../bower_components/jquery-color/jquery.color.js"></script>
     <link rel="stylesheet" type="text/css" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css">
     <script type="text/javascript" src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../bower_components/JSColor/jscolor.js"></script>
 
     <!-- LOCAL RESOURCES: FROM PUBLIC -->
     <script type="text/javascript" src="../../public/application3.js"></script>
@@ -30,15 +31,35 @@
       </div>
     </div>
   </nav>
-  <!-- signup form -->
-  <div class="container">
+  
+  <div class="container col-xs-3">
     <header>
       <h2>Your Colors</h2>
+      <table class="col-xs-12">
+        <tr class="color_row"><td>color template</td></tr>
+        <tr class="color_row"><td>color template</td></tr>
+        <tr class="color_row"><td>color template</td></tr>
+      </table>
     </header>
-    <article id="signup_form">
-      
-    </article>
   </div>
+  <article id="def_form" class="col-xs-9 col-xs-offset-3">
+    <header>
+      <h2>What does this color remind you of?</h2>
+    </header>
+      <input type="text" class="form-control col-xs-6 input-lg" placeholder="This color is...">
+      <input type="text" class="form-control col-xs-6 input-lg" placeholder="This color is...">
+      <input type="text" class="form-control col-xs-6 input-lg" placeholder="This color is...">
+  </article>
+  <article id="colorpicker_form" class="col-xs-9 col-xs-offset-3">
+  <header><h2>Pick color here:</h2></header>
+  <!-- ADD ON CHANGE COLOR CHANGE -->
+   <input class="color {pickerFaceColor:'#232324',valueElement:'myValue'} input-lg "> 
+   <input id="myValue" class="input-lg">
+  </article>
+
+
+
+
   <!-- bootstrap modal item-->
   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
