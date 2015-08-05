@@ -3,7 +3,7 @@ var Joi = require('joi');
 
 exports.register = function(server, option, next){
   server.route([ 
-    {//Responds to retrieving all new projects of user
+    {//Responds to retrieving all new projects of user 
       method:'GET',
       path:'/projects',
       handler: function(request, reply){
@@ -52,10 +52,15 @@ exports.register = function(server, option, next){
         );
       }
     },
-    // {//Editing colors and definitions
-    //   method:'PUT',
-    //   path: ''
-    // }
+    {//Responds to /colors GET
+      method:'GET',
+      path:'/colors',
+      handler:function(request,reply){
+        var db = request.server.plugins['hapi-mongodb'].db;
+
+        return reply('you are accessing the color page');
+      }
+    }
   ]);
   next();
 };

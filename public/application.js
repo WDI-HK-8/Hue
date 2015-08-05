@@ -1,6 +1,5 @@
 //Class Constructor
 var Hue = function(){
-  this.user = 'somebody';
 }
 var hue = new Hue();
 

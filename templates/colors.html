@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hue: Build Your Color Definitions</title>
+  <link rel="icon" 
+        type="image/png" 
+        href="../../public/assets/nyan_cat_favicon.png">
+  <!-- INCLUDED LIBRARIES -->
+  <script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="../../bower_components/jquery-color/jquery.color.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <script type="text/javascript" src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+  <!-- LOCAL RESOURCES: FROM PUBLIC -->
+  <script type="text/javascript" src="../../public/application.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../public/custom.css">
+</head>
+<body>
+  <!-- bootstrap navbar -->
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- bootstrap dropdown -->
+      <div class="navbar-header">
+        <a class="navbar-brand" href="">  <h1>PROJECT</h1>
+        </a>
+
+        <span id="logo_subhead"><small>Build Your Color Definitions</small></span>
+      </div>
+      <div class="dropdown">
+        <a href="#" class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> {{{Sign in}}} <span class="caret"></span></a>
+        
+        {{navbar content}}
+      </div>
+    </div>
+  </nav>
+  <!-- signup form -->
+  <div class="container">
+    <header>
+      {{Main Header}}
+    </header>
+    <article id="signup_form">
+      {{Main Content}}
+    </article>
+  </div>
+  <!-- bootstrap modal item-->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">{{Modal Title}}</h4>
+        </div>
+        <div class="modal-body">
+          {{Modal Content}}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>  
+</body>
+</html>

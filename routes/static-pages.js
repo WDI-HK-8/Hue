@@ -22,6 +22,18 @@ exports.register = function(server, options, next){
         }
       } 
     },
+    {//linked to colors.html
+      method:'GET',
+      path:'/project/colors',
+      handler: function(request, reply){
+        if(request.session.get('huelist_session')){
+          reply.view('colors');
+        }
+        else{
+          return reply('You need to sign in');
+        }
+      }
+    },
     {//linked assets via html
       method:'GET',
       path:'/public/{path*}', 
