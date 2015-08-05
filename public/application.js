@@ -18,6 +18,7 @@ Hue.prototype.signup_user = function() {
     },
     success:function(response){
       console.log(response);
+      $('#signup_form input').val('');
       $('#myModal').modal('toggle');
     },
     error:function(error){

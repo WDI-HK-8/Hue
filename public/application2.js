@@ -33,6 +33,7 @@ Hue.prototype.postNewProject = function(that){
     success: function(respond){ //on successful POST request...
       var project_name = respond.project_name;
       that.parent().html('<h3>'+project_name+'</h3>');
+      window.location = '/project/' + project_name;
     },
     error: function(error){
       console.log(error);
@@ -42,11 +43,11 @@ Hue.prototype.postNewProject = function(that){
 
 Hue.prototype.deleteSession = function(){
   $.ajax({
-    url: '/sessions/'+'signout',
+    url: '/sessions',
     type: 'DELETE',
     dataType: 'JSON',
     success: function(respond){
-      window.location= '/';
+      window.location = '/';
     },
     error: function(error){
       console.log(error);
@@ -61,7 +62,7 @@ Hue.prototype.getProject = function(){
     dataType: 'JSON',
     success: function(response){
       console.log(response);
-      // window.location = '/project/colors';
+      window.location = '/test';
     },
     error: function(error){
       console.log(error);
@@ -80,10 +81,12 @@ $(function(){
   $(document).on('click','#new_proj_btn', function(){
     var that = $(this);
     hue.postNewProject(that);
+    // hue.getProject();
   });
 
   $(document).on('click','#edit_project_btn', function(){ 
-    hue.getProject();
+    console.log('out of order.');
+    // hue.getProject();
   });
 
   $('#myModal').modal('toggle');

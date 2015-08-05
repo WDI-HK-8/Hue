@@ -24,8 +24,9 @@ exports.register = function(server, options, next){
     },
     {//linked to colors.html
       method:'GET',
-      path:'/project/colors',
+      path:'/project/{name}',
       handler: function(request, reply){
+        request.params.name;
         if(request.session.get('huelist_session')){
           reply.view('colors');
         }

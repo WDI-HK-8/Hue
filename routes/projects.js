@@ -8,8 +8,8 @@ exports.register = function(server, option, next){
       path:'/projects',
       handler: function(request, reply){
 
-        var db = request.server.plugins['hapi-mongodb'].db;
-        var ObjectId = request.server.plugins['hapi-mongodb'].ObjectID;
+        var db           = request.server.plugins['hapi-mongodb'].db;
+        var ObjectId     = request.server.plugins['hapi-mongodb'].ObjectID;
         //get user_id from current session
         var user_session = request.session.get('huelist_session');
         //init document 'projects' of a document, return if exists
@@ -28,8 +28,8 @@ exports.register = function(server, option, next){
       method:'POST',
       path:'/projects',
       handler: function(request, reply){
-        var db = request.server.plugins['hapi-mongodb'].db;
-        var ObjectId = request.server.plugins['hapi-mongodb'].ObjectID;
+        var db           = request.server.plugins['hapi-mongodb'].db;
+        var ObjectId     = request.server.plugins['hapi-mongodb'].ObjectID;
         var project_name = request.payload.project_name;
         var user_session = request.session.get('huelist_session');
         
@@ -56,9 +56,17 @@ exports.register = function(server, option, next){
       method:'GET',
       path:'/colors',
       handler:function(request,reply){
-        var db = request.server.plugins['hapi-mongodb'].db;
-
-        return reply('you are accessing the color page');
+        var db           = request.server.plugins['hapi-mongodb'].db;
+        var ObjectId     = request.server.plugins['hapi-mongodb'].ObjectID;
+        var user_session = request.session.get('huelist_session');
+        db.collection('users').find(
+          {_id: ObjectId(user_session.user_id)}, //criteria
+          {projects:[]}, 
+          function(err, writeResult){
+            if(err){return reply(err);};
+            return reply(writeResult.toArray());
+          }
+        );
       }
     }
   ]);
