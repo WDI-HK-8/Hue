@@ -14,7 +14,12 @@ exports.register = function(server, options, next){
       path:'/users/{user_id}/projects',
       handler: function(request, reply){
         request.params.user_id;
-        reply.view('projects');
+        if(request.session.get('huelist_session')){
+          reply.view('projects');
+        }
+        else{
+          return reply('You need to sign in');
+        }
       } 
     },
     {//linked assets via html

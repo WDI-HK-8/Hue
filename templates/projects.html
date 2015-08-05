@@ -1,107 +1,80 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Hue: Build Your Color Definitions</title>
-  <link rel="icon" 
-        type="image/png" 
-        href="../public/assets/nyan_cat_favicon.png">
-  <!-- INCLUDED LIBRARIES -->
-  <script src="../../bower_components/jquery/dist/jquery.min.js"></script>
-  <script src="../../bower_components/jquery-color/jquery.color.js"></script>
-  <link rel="stylesheet" type="text/css" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css">
-  <script type="text/javascript" src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <head>
+    <title>Hue: Build Your Color Definitions</title>
+    <link rel="icon" 
+          type="image/png" 
+          href="../../public/assets/nyan_cat_favicon.png">
+    <!-- INCLUDED LIBRARIES -->
+    <script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../../bower_components/jquery-color/jquery.color.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <script type="text/javascript" src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
-  <!-- LOCAL RESOURCES: FROM PUBLIC -->
-  <script type="text/javascript" src="../../public/application.js"></script>
-  <link rel="stylesheet" type="text/css" href="../../public/custom.css">
-</head>
-<body>
-  <!-- bootstrap navbar -->
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="">  
-          <h1>Hue.list</h1>
-        </a>
-        <span id="logo_subhead">
-          <small>Build Your Color Definitions</small>
-        </span>
+    <!-- LOCAL RESOURCES: FROM PUBLIC -->
+    <script type="text/javascript" src="../../public/application2.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../public/custom.css">
+  </head>
+  <body>
+    <!-- bootstrap navbar -->
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="">  
+            <h1>Hue.list</h1>
+          </a>
+          <span id="logo_subhead">
+            <small>Build Your Color Definitions</small>
+          </span>
+        </div>
+        <div class="dropdown">
+          <a href="#" class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sign out</a>
+        </div>
       </div>
-      <div class="dropdown">
-        <a href="#" class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sign out</a>
-      </div>
+    </nav>
+    <!-- signup form -->
+    <div class="container">
+      <header>
+        <h1>Browse your projects</h1>
+        <span id="gradient_line"></span>
+      </header>
+      <article id="signup_form">
+        <table class="table table-striped" id="project_list">
+          <tr>
+            <th></th> 
+            <th>Project Name</th> 
+            <th>Project Color Palette</th> 
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr> 
+          <tr id="addNewRow">  <!-- add pre-existing projects before this row-->
+            <td><button class="btn btn-primary btn-xs" id="add_proj_btn"> + New Project</button></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+      </article>
     </div>
-  </nav>
-  <!-- signup form -->
-  <div class="container">
-    <header>
-      <h1>You are now signed in.<br> NOW I DEMAND A 'GET' REQUEST. <br>You "get" that?</h1>
-      <span id="gradient_line"></span>
-    </header>
-    <article id="signup_form">
-      <table class="table table-striped">
-        <tr> 
-          <th>Project Name</th> 
-          <th>Project Color Palette</th> 
-        </tr> 
-        <tr> 
-          <td>NEW ROW</td> 
-          <td>HERE</td> 
-        </tr>
-      </table>
-    </article>
-  </div>
-  <!-- bootstrap modal item-->
-  <!-- For account deletion -->
-  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="myModalLabel">Welcome back, master.</h4>
-        </div>
-        <div class="modal-body">
-          You have no projects at the moment. How sad! I know you can do better.
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary" data-dismiss="modal">Okay, I get it.</button>
+    <!-- bootstrap modal item-->
+    <!-- Warn message about projects status -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Welcome back, master.</h4>
+          </div>
+          <div class="modal-body">
+            You have no projects at the moment. How sad! I know you can do better.
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary btn-xs" data-dismiss="modal">Okay, I get it.</button>
+          </div>
         </div>
       </div>
-    </div>
-  </div>  
-</body>
-<!-- NEW JS FILE? -->
-<script type="text/javascript">
-  $(function(){
-    //GET ALL PROJECTS ON DOM READY
-    // $.ajax({
-    //   url: '/projects',
-    //   type: 'GET',
-    //   dataType: 'JSON',
-    //   success: function(respond){
-    //     console.log(respond);
-    //   },
-    //   error: function(error){
-    //     console.log(error);
-    //   }
-    // });
-    $('#myModal').modal('toggle');
-    //SIGNOUT
-    $('.dropdown').click(function(){
-      $.ajax({
-        url: '/sessions',
-        type: 'DELETE',
-        dataType: 'JSON',
-        success: function(respond){
-          window.location.replace('/');
-        },
-        error: function(error){
-          console.log(error);
-        }
-      });
-    });
-
-    
-  });
-</script>
+    </div>  
+  </body>
 </html>

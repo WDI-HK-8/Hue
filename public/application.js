@@ -43,8 +43,7 @@ Hue.prototype.signin_user = function() {
       
       console.log(response);
       if(response.authenticated === true){
-        window.location.replace('/users/'+response.user_id+'/projects'); // @static-pages.js
-        //Sends a 'get' request to fetch project listing
+        window.location = '/users/'+response.user_id+'/projects'; // @static-pages.js
       }
 
     },
