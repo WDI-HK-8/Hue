@@ -2,6 +2,8 @@
 
 ## An app that allows you to build profiles of color definitions. 
 
+![COLOR IS AMAZING](http://38.media.tumblr.com/tumblr_lrbu1l9BJk1qgzxcao1_250.gif)
+
 ### Description
 
 Ever find yourself in projects that use color designs and unable to communicate or evoke the idea behind a certain color? Why not keep track and update your personal definitions of any color? 

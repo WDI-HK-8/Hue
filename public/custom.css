@@ -1,0 +1,169 @@
+@font-face {
+  font-family: 'Muli';
+  src: url('assets/muli/Muli-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Philosopher';
+  src: url('assets/philosopher/Philosopher-Regular.ttf') format('truetype');
+}
+
+html, body{
+  position: absolute;
+  width: 100%;
+  background-color:#393B3B;
+  font-family: Muli;
+  color:white;
+  font-size: 20px;
+  box-shadow: inset 0 0 35vh #000000;\
+  overflow: auto;
+}
+
+input{
+  color:black;
+}
+
+/*Navbar*/
+nav.navbar.navbar-default{
+  background: #232324;
+  height: 75px;
+  border-bottom: 2px solid transparent;
+  padding: 0px 50px;
+}
+div.container-fluid{
+  width:100%;
+  height: inherit;
+  padding: 0px;
+}
+
+
+/*brand*/
+div.navbar-header, .navbar-brand{
+  height:inherit;
+  margin-left: 0px;
+  padding:0px;
+}
+
+a.navbar-brand{
+  color:orange !important;
+}
+
+div.navbar-header span{
+  position: absolute;
+  top: 31px;
+  margin-left: 10px;
+}
+
+/*Sign in dropdown menu*/
+
+.dropdown-toggle {
+  color: #0593FF;
+  font-size: 25px;
+  padding: 20px;
+  float:right;
+}
+
+.dropdown-toggle:hover{
+  color: white;
+  padding-bottom: 16px;
+  border-bottom: 3px solid springgreen;
+}
+
+.dropdown-toggle:focus, .dropdown-toggle:hover{
+  color: white;
+  text-decoration: none;
+}
+
+.dropdown-menu{
+  top:75px;
+  margin-top: 0px;
+  padding:20px;
+  min-width: 350px;
+  background-color:#232324;
+  border:  
+}
+
+.dropdown-menu input{
+  margin-bottom: 10px;
+  width:100%;
+}
+
+#save_cookie_checkbox{
+  margin:10px 0px 0px 5px;
+  width: auto;
+
+}
+
+/*Main*/
+
+/*Signup Form*/
+.container{
+  margin: 80px auto;
+  background-color: #232324;
+  min-height: 85vh;
+  width:50vw;
+  box-shadow: 5px 10px 15px black;
+  box-sizing:border-box;
+  border-right:11px solid rgba(201,5,152,0.2);
+  border-left:11px solid rgba(201,5,152,0.2);
+}
+
+#signup_form, header h1{
+  text-align: center;
+  color:white;
+  margin: 40px;
+}
+
+header h1{
+  color:#FFFFFF;
+  font-size: 60px;
+}
+
+#signup_form p,#signup_form button {
+  margin: 20px auto;
+  text-align: center;
+  width: 70%;
+  font-size: 25px;
+  font-family: Philosopher;
+}
+
+#signup_form label{
+  padding: 0px;
+  text-align: left;
+}
+
+#signup_span{
+  color:#FC2F1F;
+}
+
+form.form-horizontal{
+  width: 80%;
+  margin: 60px auto;
+}
+form.form-horizontal input{
+  margin-bottom: 20px;
+  margin-left:25px;
+  width: 95%;
+}
+
+#signup_form .col-sm-10{
+  padding: 0px;
+}
+
+.checkbox input[type=checkbox]{
+  width:inherit;
+}
+
+/*Project List Table*/
+.table-striped>tbody>tr:nth-of-type(odd){
+  background-color: rgba(222,222,227,0.15) ;
+}
+
+th{
+  text-align: center;
+}
+
+/*Modal*/
+.modal-content{
+  color:black;
+}

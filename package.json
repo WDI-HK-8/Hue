@@ -20,9 +20,8 @@
   "author": "jonycfu",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/WDI-HK-8/Hue/issues"
+    "url": "https://github.com/WDI-HK-8/Hue"
   },
-  "homepage": "https://github.com/WDI-HK-8/Hue#readme",
   "dependencies": {
     "bcrypt": "^0.8.4",
     "handlebars": "^3.0.3",
