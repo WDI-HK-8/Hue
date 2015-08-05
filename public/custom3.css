@@ -23,6 +23,11 @@ input{
   color:black;
 }
 
+input[type="text"]:focus{
+  /*border-color: orange;*/
+  border: 3px solid orange; 
+}
+
 /*Navbar*/
 nav.navbar.navbar-default{
   background: #232324;
@@ -78,14 +83,12 @@ div.navbar-header span{
 
 /*Main*/
 
-article{
-  box-shadow: inset 0 0 5vh #000000;
-}
 
 /*color form*/
 .container{
   position: absolute;
   margin:0px;
+  padding: 0px;
   background-color: #232324;
   min-height: 95vh;
   box-shadow: 5px 10px 15px black;
@@ -100,6 +103,13 @@ header h1{
 
 header h2{
   margin: 40px 20px;
+  padding: 15px;
+}
+
+.container h2{
+  margin: 40px 0px;
+  color: #232324;
+  background-color:#E3E3E8;
 }
 
 #def_form p,#def_form button {
@@ -118,10 +128,8 @@ header h2{
 }
 
 .form-control{
-  width:33%;
-  margin: 20px;
-  display: block;
-  clear:both;
+  width:90%;
+  margin:0px 20px 50px 20px;
 }
 
 #def_form label{
@@ -129,11 +137,12 @@ header h2{
   text-align: left;
 }
 #def_form{
-  height: 45vh;
+  height: 40vh;
+  border-top:6px solid teal;
 }
 
 #colorpicker_form{
-  height: 50vh;
+  height: 55vh;
 }
 
 
@@ -142,11 +151,37 @@ header h2{
 }
 
 /*Colorpicker*/
-.color{ 
+.color, #myValue{ 
   margin: 20px;
+}
+
+#color_side, #def_side{
+  height: 100%;
+}
+
+#color_side{
+  border-right: 2px solid lightgrey;
+}
+
+#color_side h2{
+  border: solid 1px lightgrey;
+  text-align: center;
+  background-color: #232324;
+}
+
+#def_side h2{
+  text-align: left;
+  margin-left: 0px;
+  padding-left: 0px;
+}
+
+#submit_btn{
+  bottom:-15px;
+  width:35%;
 }
 
 /*Modal*/
 .modal-content{
   color:black;
 }
+
