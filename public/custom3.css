@@ -83,7 +83,6 @@ div.navbar-header span{
 
 /*Main*/
 
-
 /*color form*/
 .container{
   position: absolute;
@@ -91,7 +90,6 @@ div.navbar-header span{
   padding: 0px;
   background-color: #232324;
   min-height: 95vh;
-  box-shadow: 5px 10px 15px black;
   box-sizing:border-box;
   border-right:11px solid #232324;
 }
