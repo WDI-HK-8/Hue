@@ -11,7 +11,7 @@
 html, body{
   position: absolute;
   width: 100%;
-  height:100%;
+  height:100vh;
   background-color:#393B3B;
   font-family: Muli;
   color:white;
@@ -89,9 +89,25 @@ div.navbar-header span{
   margin:0px;
   padding: 0px;
   background-color: #232324;
-  min-height: 95vh;
+  height: 95vh;
   box-sizing:border-box;
   border-right:11px solid #232324;
+  overflow: auto;
+
+
+}
+.container h2{
+  margin: 40px 0px;
+  color: #232324;
+  background-color:#E3E3E8;
+  position: absolute;
+  width: 100%;
+  z-index: 5000;
+  text-align: center;
+}
+
+.container table{
+  top:150px;
 }
 
 header h1{
@@ -104,11 +120,6 @@ header h2{
   padding: 15px;
 }
 
-.container h2{
-  margin: 40px 0px;
-  color: #232324;
-  background-color:#E3E3E8;
-}
 
 #def_form p,#def_form button {
   margin: 20px auto;
@@ -118,7 +129,11 @@ header h2{
 }
 
 .color_row{
+  position: absolute;
+  width: 100%;
   height: 120px;
+  left:-350px;
+  padding: 0px;
 }
 
 .color_row td{
