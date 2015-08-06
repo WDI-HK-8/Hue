@@ -30,6 +30,20 @@ Hue.prototype.postColorData = function(color_hex, project_name){
 
 }
 
+Hue.prototype.deleteSession = function(){
+  $.ajax({
+    url: '/sessions',
+    type: 'DELETE',
+    dataType: 'JSON',
+    success: function(respond){
+      window.location = '/';
+    },
+    error: function(error){
+      console.log(error);
+    }
+  });
+}
+
 //DOM Ready
 $(function(){
   //Store and display project name
@@ -38,6 +52,14 @@ $(function(){
   if(modulus_index > 0){
     query_str = query_str.slice(0,modulus_index) + ' ' + query_str.slice(modulus_index+3);
   }
+
+  //animate main
+  $('.container').css('left', '-500px').animate({'left':'0px'}, 875);
+
+  $('#colorpicker_form').css('right', '-1800px').animate({'right':'0px'},950);
+
+  $('#def_form').css('bottom', '-500px').animate({'bottom':'0px'},875);
+
   $('.navbar-brand h1').text(query_str);
   $('#myValue').change(function(event) {
     $('#color_side').css('background-color', '#' + $(this).val());
@@ -46,5 +68,9 @@ $(function(){
   $('#submit_btn').click(function(event) {
     var color_hex = $('#myValue').val();
     hue.postColorData(color_hex, query_str);
+  });
+
+  $('.dropdown').click(function(){
+    hue.deleteSession();
   });
 });

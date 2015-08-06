@@ -136,11 +136,13 @@ header h2{
 }
 #def_form{
   height: 40vh;
-  border-top:6px solid teal;
+  border-top:3px solid teal;
+  border-left:3px solid #FC2F1F;
 }
 
 #colorpicker_form{
   height: 55vh;
+  padding:0px;
 }
 
 
@@ -158,7 +160,8 @@ header h2{
 }
 
 #color_side{
-  border-right: 2px solid lightgrey;
+  border-right: 2px solid #0EAF00;
+  background-color: orange;
 }
 
 #color_side h2{
