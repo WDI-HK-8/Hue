@@ -81,7 +81,6 @@ $(function(){
   $(document).on('click','#new_proj_btn', function(){
     var that = $(this);
     hue.postNewProject(that);
-    // hue.getProject();
   });
 
   $(document).on('click','#edit_project_btn', function(){ 
