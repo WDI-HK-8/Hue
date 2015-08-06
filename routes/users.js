@@ -18,8 +18,8 @@ exports.register = function(server, options, next){
 
           db.collection('users').count(uniqueUser,function(err, writeResult){
             //if such a user email exist or passwords are identical...
-            if(writeResult){ return reply('User already exists!');}
-            else if(!samePwd){ return reply('Please check if your passwords are the same!');}  
+            if(writeResult){ return reply({user_exists_alrdy:true});}
+            else if(!samePwd){ return reply({same_pwd:false});}  
             //if not, encrypt the password...
             Bcrypt.genSalt(10, function(err, salt) {
               Bcrypt.hash(user.password, salt, function(err, hash) {

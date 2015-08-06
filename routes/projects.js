@@ -34,20 +34,25 @@ exports.register = function(server, option, next){
         var user_session = request.session.get('huelist_session');
         
         //Reconstruct dynamic key document
-        var project_file = {};
-        project_file[project_name] = [];
+        var project_file = {
+          user_id: user_session.user_id,
+          name: project_name,
+          colors:[]
+        };
 
         //LATER: If current project don't have the same name as project_name...
-        db.collection('users').update(
-          {_id: ObjectId(user_session.user_id)}, //criteria
-          {$push: { //update 
-            projects:project_file 
-            } 
-          }, 
-          {upsert:true}, //options
+        //CREATE NEW COLLECTION 
+        db.collection('projects').insert(
+          project_file, 
           function(err, writeResult){
+
             if(err){return reply(err);};
-            return reply(request.payload);
+            reply(
+              {
+                writeResult:writeResult,
+                project_name:project_name
+              }
+            );
           }
         );
       }

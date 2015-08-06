@@ -32,6 +32,7 @@ Hue.prototype.postNewProject = function(that){
     },
     success: function(respond){ //on successful POST request...
       var project_name = respond.project_name;
+      alert(project_name);
       that.parent().html('<h3>'+project_name+'</h3>');
       window.location = '/project/' + project_name;
     },
@@ -55,14 +56,14 @@ Hue.prototype.deleteSession = function(){
   });
 }
 
-Hue.prototype.getProject = function(){
+Hue.prototype.getProject = function(project_name){
   $.ajax({
     url: '/colors', //insert project name
     type: 'GET',
     dataType: 'JSON',
     success: function(response){
       console.log(response);
-      window.location = '/test';
+      window.location = '/project/'+project_name;
     },
     error: function(error){
       console.log(error);
@@ -84,8 +85,8 @@ $(function(){
   });
 
   $(document).on('click','#edit_project_btn', function(){ 
-    console.log('out of order.');
-    // hue.getProject();
+    var project_name = $(this).parent().next().text();
+    hue.getProject(project_name); //add project name
   });
 
   $('#myModal').modal('toggle');

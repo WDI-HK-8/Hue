@@ -18,8 +18,23 @@ Hue.prototype.signup_user = function() {
     },
     success:function(response){
       console.log(response);
-      $('#signup_form input').val('');
-      $('#myModal').modal('toggle');
+      if (response.user_exists_alrdy==true) {
+        $('.form-horizontal').prepend('<div class="alert alert-danger" role="alert"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><span class="sr-only">Error:</span> Sorry! This email already has an account.</div>').fadeIn(1500, function(){
+            $('.form-horizontal .alert').fadeOut(5000);
+          });
+      }
+
+      else if (response.same_pwd == false){
+        $('.form-horizontal').prepend('<div class="alert alert-danger" role="alert"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><span class="sr-only">Error:</span> Sorry! Passwords MUST match.</div>').fadeIn(1500, function(){
+            $('.form-horizontal .alert').fadeOut(5000);
+          });
+      }
+
+      else if (response.same_pwd != false && response.user_exists_alrdy != true){
+        $('#signup_form input').val('');
+        $('#myModal').modal('toggle');
+      }
+      //joi should take care of blanks.
     },
     error:function(error){
       console.log(error);
@@ -39,8 +54,7 @@ Hue.prototype.signin_user = function() {
       } 
     },
     success:function(response){ 
-      //change page to projects page on successful log in
-      
+      //redirect to projects page on successful log in
       console.log(response);
       if(response.authenticated === true){
         window.location = '/users/'+response.user_id+'/projects'; // @static-pages.js

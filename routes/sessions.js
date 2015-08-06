@@ -53,7 +53,7 @@ exports.register = function(server, options, next){
     },
     {//DELETE AUTHENTICATION. SIGN OUT.
       method:'DELETE',
-      path:'/sessions/{session_id}',
+      path:'/sessions',
       handler:function(request, reply){
         request.params.session_id;
         var db = request.server.plugins['hapi-mongodb'].db;
