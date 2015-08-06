@@ -22,6 +22,7 @@
   "dependencies": {
     "jquery": "~2.1.4",
     "bootstrap": "~3.3.5",
-    "jquery-color": "~2.1.2"
+    "jquery-color": "~2.1.2",
+    "JSColor": "~1.4.2"
   }
 }

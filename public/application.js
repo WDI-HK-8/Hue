@@ -1,6 +1,5 @@
 //Class Constructor
 var Hue = function(){
-  this.user = 'somebody';
 }
 var hue = new Hue();
 
@@ -19,6 +18,7 @@ Hue.prototype.signup_user = function() {
     },
     success:function(response){
       console.log(response);
+      $('#signup_form input').val('');
       $('#myModal').modal('toggle');
     },
     error:function(error){
@@ -43,11 +43,9 @@ Hue.prototype.signin_user = function() {
       
       console.log(response);
       if(response.authenticated === true){
-        window.location.replace('./projects');
+        window.location = '/users/'+response.user_id+'/projects'; // @static-pages.js
       }
-      //...NEEDS AJAX HERE TO GET PROJECT LISTINGS.BACKEND. FRONT END.
 
-      //Sends a 'get' request to fetch project listing
     },
     error:function(error){
       console.log(error);

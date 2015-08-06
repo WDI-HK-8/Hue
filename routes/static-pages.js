@@ -11,10 +11,29 @@ exports.register = function(server, options, next){
     },
     {//linked to projects.html
       method:'GET',
-      path:'/projects',
+      path:'/users/{user_id}/projects',
       handler: function(request, reply){
-        reply.view('projects');
+        request.params.user_id;
+        if(request.session.get('huelist_session')){
+          reply.view('projects');
+        }
+        else{
+          return reply('You need to sign in');
+        }
       } 
+    },
+    {//linked to colors.html
+      method:'GET',
+      path:'/project/{name}',
+      handler: function(request, reply){
+        request.params.name;
+        if(request.session.get('huelist_session')){
+          reply.view('colors');
+        }
+        else{
+          return reply('You need to sign in');
+        }
+      }
     },
     {//linked assets via html
       method:'GET',

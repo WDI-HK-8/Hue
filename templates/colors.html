@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hue: Build Your Color Definitions</title>
+    <link rel="icon" 
+          type="image/png" 
+          href="../../public/assets/nyan_cat_favicon.png">
+    <!-- INCLUDED LIBRARIES -->
+    <script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../../bower_components/jquery-color/jquery.color.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <script type="text/javascript" src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../bower_components/JSColor/jscolor.js"></script>
+
+    <!-- LOCAL RESOURCES: FROM PUBLIC -->
+    <script type="text/javascript" src="../../public/application3.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../public/custom3.css">
+  </head>
+<body>
+  <!-- bootstrap navbar -->
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- bootstrap dropdown -->
+      <div class="navbar-header">
+        <a class="navbar-brand" href="">  <h1>PROJECT</h1>
+        </a>
+      </div>
+      <div class="dropdown">
+        <a href="#" class="dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">  <span class="caret"></span></a>
+               
+      </div>
+    </div>
+  </nav>
+  
+  <div class="container col-xs-3">
+    <header>
+      <h2>Your Colors</h2>
+      <table class="col-xs-12">
+        <tr class="color_row"><td>color template</td></tr>
+        <tr class="color_row"><td>color template</td></tr>
+        <tr class="color_row"><td>color template</td></tr>
+      </table>
+    </header>
+  </div>
+  <article id="colorpicker_form" class="col-xs-9 col-xs-offset-3">
+    <div id="color_side" class="col-xs-4">
+      <header>
+        <h2>Choose a color:</h2>
+      </header>
+      <input type="text" class="color {pickerFaceColor:'#232324',valueElement:'myValue'} input-lg col-xs-10" placeholder="Pick color here"> 
+      <input type="text" id="myValue" class="input-lg col-xs-5">
+    </div>
+    <div id="def_side" class="col-xs-8">
+      <header class="col-xs-8">
+        <h2>This reminds you of:</h2>
+      </header>
+      <input type="text" id="def1" class="form-control col-xs-6 input-lg center-block" placeholder="This color is...">
+      <input type="text" id="def2" class="form-control col-xs-6 input-lg center-block" placeholder="This color is...">
+      <input type="text" id="def3" class="form-control col-xs-6 input-lg center-block" placeholder="This color is...">
+      <button type="submit" id="submit_btn" class="btn btn-default btn-lg btn-success center-block">Save Color</button>
+    </div>
+  </article>
+  <article id="def_form" class="col-xs-9 col-xs-offset-3">
+  </article>
+
+
+
+
+  <!-- bootstrap modal item-->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel"></h4>
+        </div>
+        <div class="modal-body">
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>  
+</body>
+</html>

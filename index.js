@@ -29,7 +29,8 @@ server.views({
 
 // ---------ROUTES & PLUGINS---------
 var plugins = [
-  // {register: require('./routes/projects.js')},
+  {register: require('./routes/colors.js')},
+  {register: require('./routes/projects.js')},
   {register: require('./routes/sessions.js')},
   {register: require('./routes/users.js')},
   {register: require('./routes/static-pages.js')},

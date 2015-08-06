@@ -14,13 +14,13 @@ exports.register = function(server, options, next){
         db.collection('users').findOne({email:user.email}, function(error, writeResult){
           if(error){return reply('Mongodb Error')};
           if(!writeResult){ //if can't find user email...
-            return reply({authorized: false}); //'Sorry. You gotta sign up first before logging in.'
+            return reply({authorized: false}); 
           }     
           //2. if user exists, check password - use Bcrypt compare
           Bcrypt.compare(user.password, writeResult.password, function(err, res){
             if(err){return reply('Bcrypt Error')};
             if(!res){ //if password is incorrect...
-              return reply({authorized: false}); //'Sorry. Incorrect Password. Try again.'
+              return reply({authorized: false}); 
             }   
             //3. create new session in the sessions collections
             var randomKeyGenerator = function() {
@@ -36,7 +36,7 @@ exports.register = function(server, options, next){
               if(err){return reply(err)};
               //set same session_id in the client's cookie
               request.session.set('huelist_session' , session);
-              return reply({authenticated: true}); //'you are logged in.'
+              return reply({authenticated: true, user_id: session.user_id}); //'you are logged in.'
             }); 
           });
         });
@@ -51,10 +51,11 @@ exports.register = function(server, options, next){
         Auth.authenticated(request, callback);
       }
     },
-    {//DELETE AUTHENTICATION
+    {//DELETE AUTHENTICATION. SIGN OUT.
       method:'DELETE',
-      path:'/signout',
+      path:'/sessions/{session_id}',
       handler:function(request, reply){
+        request.params.session_id;
         var db = request.server.plugins['hapi-mongodb'].db;
         var cookie = request.session.get('huelist_session');
         if(!cookie){return reply({cookie:false});}
